@@ -22,8 +22,6 @@ const Header = () => {
   const searchQuery = urlSearch.getAll("q")
   const [search,setSearch] = useState(searchQuery)
 
-  console.log(searchInput?.search.split("=")[1])
-
   const handleLogout = async () => {
     const fetchData = await fetch(SummeryApi.logout_user.url, {
       method: SummeryApi.logout_user.method,
