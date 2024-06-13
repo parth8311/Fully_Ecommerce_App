@@ -8,15 +8,12 @@ const SearchProduct = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  console.log(query.search);
-
   const fetchProduct = async () => {
     setLoading(true);
     const response = await fetch(SummeryApi.searchProduct.url + query.search);
     const dataResponse = await response.json();
     setLoading(false);
     setData(dataResponse.data);
-    console.log(dataResponse);
   };
   useEffect(() => {
     fetchProduct();

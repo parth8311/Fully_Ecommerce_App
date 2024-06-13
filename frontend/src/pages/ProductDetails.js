@@ -39,8 +39,6 @@ const ProductDetails = () => {
 
   const navigate = useNavigate()
 
-  console.log(params);
-
   const fetchProductDetails = async () => {
     setLoading(true);
     const responce = await fetch(SummeryApi.productDetails.url, {
@@ -60,8 +58,6 @@ const ProductDetails = () => {
 
     setActiveImage(dataResponse?.data?.productImage[0]);
   };
-
-  console.log(data);
 
   useEffect(() => {
     fetchProductDetails();

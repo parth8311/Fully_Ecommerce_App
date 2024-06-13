@@ -17,14 +17,10 @@ const CategoryProduct = () => {
   urlCategoryListInArray.forEach((el) => {
     urlCategoryListObject[el] = true;
   });
-  console.log("object", urlCategoryListObject);
-  console.log(urlCategoryListInArray);
   const [selectCategory, setSelectCategory] = useState(urlCategoryListObject);
   const [filterCategoryList, setFilterCategoryList] = useState([]);
 
   const [sortBy,setSortBy] = useState("")
-
-  console.log(sortBy)
 
   const fetchData = async () => {
     const response = await fetch(SummeryApi.filterProduct.url, {
@@ -38,7 +34,6 @@ const CategoryProduct = () => {
     });
     const dataResponse = await response.json();
     setData(dataResponse?.data || []);
-    console.log(dataResponse);
   };
 
   const handleSelectCategory = (e) => {
@@ -51,9 +46,6 @@ const CategoryProduct = () => {
     });
     console.log(name, value, checked);
   };
-
-  console.log(params);
-  console.log(selectCategory);
 
   useEffect(() => {
     fetchData();
@@ -78,11 +70,7 @@ const CategoryProduct = () => {
       }
       return `category=${el}&&`;
     });
-
-    console.log(urlFormat.join(""));
     navigate("/product-category?" + urlFormat.join(""));
-
-    console.log(arrayOfCategory);
   }, [selectCategory]);
 
   const handleOnChangeSortBy = (e) => {

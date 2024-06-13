@@ -44,7 +44,6 @@ const UploadProduct = ({ onClose,fetchData }) => {
   };
 
   const handleDeleteProductImage = async (index) => {
-    console.log(index);
     const newProductImage = [...data.productImage];
     newProductImage.splice(index, 1);
     setData((prev) => {

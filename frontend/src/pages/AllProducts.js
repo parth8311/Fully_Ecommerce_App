@@ -9,7 +9,6 @@ const AllProducts = () => {
   const fetchAllProduct = async () => {
     const response = await fetch(SummeryApi.allProduct.url);
     const dataResponse = await response.json();
-    console.log(dataResponse)
     setAllProduct(dataResponse?.data || []);
   };
   useEffect(() => {

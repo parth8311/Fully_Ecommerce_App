@@ -7,7 +7,6 @@ const addToCartController = async (req, res) => {
     const isProductAvailable = await addToCartModel.findOne({
       productId,
     });
-    console.log(isProductAvailable);
     if (isProductAvailable) {
       return res.json({
         message: "Already Exists In Add To Cart",

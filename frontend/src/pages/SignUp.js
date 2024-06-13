@@ -33,7 +33,6 @@ const SignUp = () => {
   const handleUploadPic = async (e) => {
     const file = e.target.files[0];
     const imagePic = await imageTobase64(file);
-    console.log(imagePic);
     setData((prev) => {
       return {
         ...prev,
@@ -68,8 +67,6 @@ const SignUp = () => {
       toast.error("Please Check Password And Confirm Password")
     }
   };
-
-  console.log("data login", data);
 
   return (
     <section id="signup">
